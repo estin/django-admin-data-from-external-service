@@ -1,0 +1,4 @@
+requests==2.26.0
+# daphne==3.0.2
+django==3.2.8
+django-admin-data-from-external-service==0.1.0

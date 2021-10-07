@@ -1,0 +1,7 @@
+__pycache__/
+.tox/
+dist
+.vimrc
+.vim
+*.sqlite3
+poetry.lock
