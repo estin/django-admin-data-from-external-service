@@ -1,13 +1,8 @@
 import math
 from unittest import mock
 
-import django
-
 from django.core.paginator import Paginator
 from django.contrib.admin.views.main import ChangeList
-
-DJANGO_2X = django.VERSION[0] == 2
-DJANGO_3X = django.VERSION[0] == 3
 
 
 def get_elided_page_range(self, number=1, *, on_each_side=3, on_ends=2):
@@ -37,10 +32,8 @@ class DfesChangeList(ChangeList):
     """
 
     def get_queryset(self, request):
-        if DJANGO_3X:
-            (self.filter_specs, self.has_filters, _, _, _) = self.get_filters(request)
-        else:
-            (self.filter_specs, self.has_filters, _, _) = self.get_filters(request)
+        parts = self.get_filters(request)
+        (self.filter_specs, self.has_filters) = parts[:2]
         return self.root_queryset
 
     def get_results(self, request):
@@ -55,7 +48,6 @@ class DfesChangeList(ChangeList):
         paginator.num_pages = int(math.ceil(total / self.list_per_page))
         paginator.get_elided_page_range = lambda *args, **kwargs: get_elided_page_range(paginator, *args, **kwargs)
 
-        # self.result_count = paginator.count
         self.result_count = paginator.count
         self.show_full_result_count = False
         self.show_admin_actions = True
