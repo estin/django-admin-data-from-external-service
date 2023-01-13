@@ -1,5 +1,7 @@
 import os.path
 
+USE_TZ = True
+
 SECRET_KEY = "secret_key_for_testing"
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))

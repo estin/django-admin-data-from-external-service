@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-admin-data-from-external-service"
-version = "0.1.1"
+version = "0.1.2"
 description = "Helpers to extend Django Admin with data from external service with minimal hacks"
 authors = ["Evgeniy Tatarkin <tatarkin.evg@gmail.com>"]
 license = "MIT"
@@ -14,10 +14,6 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.6",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
   "Topic :: Internet :: WWW/HTTP",
   "Topic :: Software Development :: Libraries :: Application Frameworks",
   "Topic :: Software Development :: Libraries :: Python Modules"
@@ -28,7 +24,7 @@ packages = [
 
 
 [tool.poetry.dependencies]
-# nothing
+python = "^3.6"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"

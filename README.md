@@ -12,7 +12,7 @@
 Main features:
  - reuse Django Admin layout to simplify customization of viewing and managing external data (list/view/filter+search/ordering)
  - datasource agnostic
- - django2.x and django3.x support
+ - django2.x/django3.x/django4.x support
 
 ## How it works
 
