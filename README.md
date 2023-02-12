@@ -6,8 +6,8 @@
 </div>
 
 [Live demo](https://dadfes.etatarkin.ru/) with [sources](https://github.com/estin/django-admin-data-from-external-service/tree/master/demo)
- - [view](http://dadfes.herokuapp.com/github/repository/) Github repository of Django org ([sources](https://github.com/estin/django-admin-data-from-external-service/tree/master/demo/github/models.py)), may appear api rate limit error
- - [view](http://dadfes.herokuapp.com/clickhouse/recipe/) recipes from ClickHouse [playground](https://clickhouse.com/docs/en/getting-started/example-datasets/recipes/) ([sources](https://github.com/estin/django-admin-data-from-external-service/tree/master/demo/clickhouse/models.py))
+ - [view](http://dadfes.etatarkin.ru/github/repository/) Github repository of Django org ([sources](https://github.com/estin/django-admin-data-from-external-service/tree/master/demo/github/models.py)), may appear api rate limit error
+ - [view](http://dadfes.etatarkin.ru/clickhouse/recipe/) recipes from ClickHouse [playground](https://clickhouse.com/docs/en/getting-started/example-datasets/recipes/) ([sources](https://github.com/estin/django-admin-data-from-external-service/tree/master/demo/clickhouse/models.py))
 
 Main features:
  - reuse Django Admin layout to simplify customization of viewing and managing external data (list/view/filter+search/ordering)
