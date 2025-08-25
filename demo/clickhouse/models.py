@@ -10,7 +10,8 @@ from dadfes.admin import DfesAdminModelMixin
 
 
 CLICKHOUSE_API_TIMEOUT = 10
-CLICKHOUSE_API_URL = "https://gh-api.clickhouse.com/?add_http_cors_header=1&user=play&password=&default_format=JSONCompact&max_result_rows=1000&max_result_bytes=10000000&result_overflow_mode=break"  # noqa
+CLICKHOUSE_API_URL = "https://gh-api.clickhouse.com/?add_http_cors_header=1&user=play&password=&default_format=JSONCompact"  # noqa
+
 
 CLICKHOUSE_LIST_SQL_TEMPLATE = """
 SELECT
@@ -51,7 +52,9 @@ class PrettyJsonListWidget(forms.widgets.Textarea):
         items = json.loads(value or "[]")
 
         try:
-            return "<ul>{}</ul>".format("".join(["<li>{}</li>".format(i) for i in items]))
+            return "<ul>{}</ul>".format(
+                "".join(["<li>{}</li>".format(i) for i in items])
+            )
         except Exception as e:
             return str(e)
 
@@ -168,7 +171,6 @@ class RecipeAdmin(DfesAdminModelMixin, admin.ModelAdmin):
         return ",".join(sort)
 
     def get_list(self, request, page_num, list_per_page):
-
         query = CLICKHOUSE_LIST_SQL_TEMPLATE.format(
             where=self._get_where_clause(request),
             order_by=self._get_order_by_clause(request),
